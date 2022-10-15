@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  home page
+{% endblock %}
+
+{% block content %}
+
+<img src="{{ url_for('static',filename='/images/doctor.png')}}" style="margin-top: 65px; margin-left: 6px;">
+
+<div style="width: 20%;height: 70%; background-color: black;opacity: 0.5; color: white;border-radius: 5px;
+position: relative; margin-top: -200px; margin-left: 500px;">
+    <h2>Welcome to Health Service emergency call system. This system will aneble users to present emergency situations
+        in just a single button push.
+    </h2>
+</div>
+
+{% endblock %}

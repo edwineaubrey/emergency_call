@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/buttons.css')}}">
+{% endblock %}
+
+{% block title %}
+ emergency call page
+{% endblock %}
+
+{% block content %}
+{% if name %}
+    <h3>{{name}} is your gues</h3>
+{% endif %}
+<form class="gid" action="/emergency_page" method="POST">
+    <input type="submit" name="code_blue_submit" value="code blue" onclick="submit()">
+</form>
+
+<!-- <form method="POST" class="code-btns" style="margin-top: 100px;position: absolute;" action=emergency_page>
+    <button type="button" class="btn btn-danger">
+        <u><h3>CODE RED</h3></u>
+        <br>
+        <img src="{{url_for('static', filename='images/FireIcon.svg.png')}}" >
+        <h5>Smoke, fire or fumes</h5>
+    </button>
+
+    <button name="submit" type="submit" class="btn btn-primary" value="Code_blue" >
+        <u><h3>CODE BLUE</h3></u>
+        <br>
+        <img src="{{url_for('static', filename='images/medical emergency.jpg')}}" >
+        <h5>Cardiac arrest or medical emergency</h5></button>
+
+    <button type="button" class="btn btn-warning">
+        <u><h3>CODE YELLOW</h3></u>
+        <br>
+        <img src="{{url_for('static', filename='images/disaster.png')}}" >
+        <h5>Pending emergency or disaster</h5>
+    </button>
+
+    <button type="button" class="btn btn-success">
+        <u><h3>CODE GREEN</h3></u>
+        <br>
+        <img src="{{url_for('static', filename='images/evacuation.jpg')}}" >
+        <h5>FACILITY EVACUATION</h5>
+    </button>
+</form> -->
+
+
+{% endblock %}
