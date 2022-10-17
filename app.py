@@ -1,5 +1,5 @@
 from ast import If
-from flask import Flask, render_template,request
+from flask import Flask, render_template
 from gpiozero import LED
 from time import sleep
 
@@ -12,9 +12,18 @@ def home_page():
     return render_template('home.html')
 
 @app.route('/emergency_page')
-def emergency_page():
-    blue_led.on()
-    sleep(10)
+@app.route('/blue_on')
+def blue_on():
+    for blink in range(10):
+        blue_led.on()
+        sleep(10)
+        blue_led.off()
+        return blink
+    return render_template('emergency_page.html')
+
+@app.blue_off('/blue_off')
+def blue_off():
+    blue_led.off()
     return render_template('emergency_page.html')
 
 
