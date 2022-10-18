@@ -1,4 +1,3 @@
-from ast import If
 from flask import Flask, render_template
 from gpiozero import LED
 from time import sleep
@@ -12,7 +11,6 @@ def home_page():
     return render_template('home.html')
 
 @app.route('/emergency_page')
-@app.route('/blue_on')
 def blue_on():
     for blink in range(10):
         blue_led.on()
